@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Currently only works with systemd
+# TODO - Make system indepedent
+systemctl $1 $2
+
+# TODO - Set up option to disable autorun

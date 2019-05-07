@@ -1,0 +1,1 @@
+/home/gavin/.scripts/tools	IN_CREATE	chmod +x $@/$#; mv $@/$# $@/`echo "$#" | cut -d'.' -f 1`

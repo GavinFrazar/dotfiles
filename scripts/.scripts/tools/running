@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [[ -n $1 ]]
+then
+    ps aux | grep $1
+else
+    echo "Usage: running PROCNAME"
+fi
