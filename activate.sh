@@ -12,6 +12,5 @@ stow doom
 stow scripts
 stow spacemacs
 stow spc-themes
-stow ssh
 stow vim
 stow zsh
