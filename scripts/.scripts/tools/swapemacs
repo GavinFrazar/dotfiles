@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+target=`readlink ~/.emacs.d`
+if [[ $target == *doom ]]
+then
+    rm ~/.emacs.d
+    ln -s ~/.emacs.spacemacs ~/.emacs.d
+elif [[ $target == *spacemacs ]]
+then
+    rm ~/.emacs.d
+    ln -s ~/.emacs.doom ~/.emacs.d
+else
+    echo "invalid symlink."
+fi
+
