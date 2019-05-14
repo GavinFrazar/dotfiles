@@ -12,4 +12,5 @@
    :desc "kill emacs" :g "k" #'kill-emacs)
  (:prefix "t"
    :desc "Frame maximized" :g "m" #'toggle-frame-maximized)
- (:prefix "/" :g "c" #'evil-ex-nohighlight))
+ (:prefix "/" :g "c" #'evil-ex-nohighlight)
+ (:desc "Repeat last command" :g "r" #'repeat))
