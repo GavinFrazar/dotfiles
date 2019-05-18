@@ -16,10 +16,16 @@
       (:prefix "b"
         :desc "Revert buffer" :g "r" #'revert-buffer))
 
+;; org
 (map! :map org-mode-map
       :localleader
       (:prefix "b"
         (:prefix ("d" . "delete")
           (:desc "Delete table column" :g "c" #'org-table-delete-column))))
+
+;; DocView
+(map! :mode doc-view-mode
+      :n "l" #'doc-view-next-page
+      :n "h" #'doc-view-previous-page)
 
 (map! [backtab] #'+format/buffer)
