@@ -6,7 +6,8 @@
       :desc "Toggle comment" :g ";" #'comment-or-uncomment-region
       (:prefix "o"
         (:desc "org agenda" :prefix "a"
-          :desc "Org clock-in" :g "i" #'org-clock-in))
+          :desc "Org clock-in" :g "i" #'org-clock-in
+          :desc "Org clock-out" :g "o" #'org-clock-out))
       (:prefix "q"
         :desc "kill emacs" :g "k" #'kill-emacs)
       (:prefix "t"
