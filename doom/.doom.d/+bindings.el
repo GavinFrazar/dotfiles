@@ -22,7 +22,9 @@
       :localleader
       (:prefix "b"
         (:prefix ("d" . "delete")
-          (:desc "Delete table column" :g "c" #'org-table-delete-column))))
+          (:desc "Delete table column" :g "c" #'org-table-delete-column)))
+      (:prefix "e"
+        :desc "to PDF" :g "p" #'org-latex-export-to-pdf))
 
 ;; DocView
 (map! :mode doc-view-mode
