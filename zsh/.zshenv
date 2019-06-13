@@ -1,9 +1,15 @@
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/bin
-PATH=$PATH:$HOME/local/bin
-PATH=$PATH:$HOME/anaconda3/bin
-PATH=$PATH:$HOME/.emacs.d/bin
-PATH=$PATH:$HOME/.scripts/tools
-PATH=/usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1${PATH:+:${PATH}}
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+pathadd $HOME/.local/bin
+pathadd $HOME/bin
+pathadd $HOME/local/bin
+pathadd $HOME/anaconda3/bin
+pathadd $HOME/.emacs.d/bin
+pathadd $HOME/.scripts/tools
+pathadd /usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1
 export PATH
 
