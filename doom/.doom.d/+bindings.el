@@ -24,7 +24,8 @@
         (:prefix ("d" . "delete")
           (:desc "Delete table column" :g "c" #'org-table-delete-column)))
       (:prefix "e"
-        :desc "to PDF" :g "p" #'org-latex-export-to-pdf))
+        :desc "to PDF" :g "p" #'org-latex-export-to-pdf)
+      (:desc "insert item" :g "n" #'org-insert-item))
 
 ;; DocView
 (map! :mode doc-view-mode
