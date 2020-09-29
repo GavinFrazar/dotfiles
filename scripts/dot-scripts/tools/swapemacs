@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 target=`readlink ~/.emacs.d`
+# TODO -- Remove this bashism
 if [[ $target == *doom ]]
 then
     rm ~/.emacs.d

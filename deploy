@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+which stow
+if [[ $? -ne 0 ]]
+then
+    sudo dnf install stow
+fi
+
+stow -t ~ --dotfiles bash
+stow -t ~ --dotfiles conda
+stow -t ~ --dotfiles scripts
+stow -t ~ --dotfiles doom
+stow -t ~ --dotfiles spacemacs
+stow -t ~ --dotfiles spc-themes
+stow -t ~ --dotfiles vim
+stow -t ~ --dotfiles i3
+stow -t ~ --dotfiles i3status
+stow -t ~/.config kitty --dotfiles
+stow -t ~ --dotfiles X
+stow -d prezto/dot-zprezto -t ~ --dotfiles runcoms
+stow -t ~ prezto --dotfiles
+

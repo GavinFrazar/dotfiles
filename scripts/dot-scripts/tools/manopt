@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# TODO remove this bashism
 if [[ -n $1 && -n $2 ]]
 then
 man $1 | grep "^\s*$2" --color
