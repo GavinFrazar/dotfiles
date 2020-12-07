@@ -4,13 +4,15 @@
 (load! "+funcs.el")
 (load! "+bindings.el")
 
-(setq user-full-name "GJF"
+(setq user-full-name "Gavin Frazar"
       user-mail-address "gavinfrazar@gmail.com")
 
 (setq doom-font (font-spec :family "Iosevka" :size 20)
       doom-big-font (font-spec :family "Iosevka" :size 24)
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 20)
-      )
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 20))
+
+(custom-set-faces!
+  '(doom-modeline-buffer-modified :foreground "orange"))
 
 (use-package! fira-code-mode
   :hook prog-mode
@@ -19,24 +21,19 @@
   (customize-set-variable
    'fira-code-mode-disabled-ligatures
    '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
-  )
+)
 
-                                        ;(use-package! lsp-mode)
-                                        ;(use-package! company-lsp
-                                        ;  :config
-                                        ;  (add-to-list 'company-backends 'company-lsp))
+;; configure .info files to use Info-mode
+(use-package! info
+  :mode ("\\.info\\'" . Info-mode)
+)
 
 ;;; Hooks:
 (add-hook! org-mode
            #'visual-line-mode)
 
-;; enable format on save
-(add-hook! #'prog-mode
-           #'format-all-mode)
-
 ;;; Ensure doom theme is loaded
 ;; (load-theme doom-theme t)
-
 
 (defun doom-modeline-conditional-buffer-encoding ()
   "We expect the encoding to be LF UTF-8, so only show the modeline when this is not the case"

@@ -15,10 +15,13 @@
 ;;      directory (for easy access to its source code).
 (doom!
  :completion
- company           ; the ultimate code completion backend
+ (company           ; the ultimate code completion backend
+  +childframe)
  ;;helm              ; the *other* search engine for love and life
  ;;ido               ; the other *other* search engine...
- ivy               ; a search engine for love and life
+ (ivy               ; a search engine for love and life
+  +prescient
+  +icons)
 
  :ui
  ;;deft              ; notational velocity for Emacs
@@ -47,26 +50,30 @@
  (evil +everywhere); come to the dark side, we have cookies
  file-templates    ; auto-snippets for empty files
  fold              ; (nigh) universal code folding
- (format)  ; automated prettiness
- ;;lispy             ; vim for lisp, for people who dont like vim
- multiple-cursors  ; editing in many places at once
+ (format +onsave)   ; automated prettiness
+ ;; lispy     ; vim for lisp, for people who dont like vim
+ multiple-cursors   ; editing in many places at once
  ;;parinfer          ; turn lisp into python, sort of
- rotate-text       ; cycle region at point between text candidates
+ rotate-text             ; cycle region at point between text candidates
  snippets          ; my elves. They type so I don't have to
 
  :emacs
  (dired            ; making dired pretty [functional]
   ;;+ranger         ; bringing the goodness of ranger to dired
-  ;;+icons          ; colorful icons for dired-mode
+  +icons          ; colorful icons for dired-mode
   )
  electric          ; smarter, keyword-based electric-indent
  ;;eshell            ; a consistent, cross-platform shell (WIP)
- imenu             ; an imenu sidebar and searchable code index
+ (ibuffer +icons)
  ;;term              ; terminals in Emacs
+ ;;vterm             ; another terminals in Emacs
  vc                ; version-control and Emacs, sitting in a tree
+ (undo +tree)
 
  :checkers
- flycheck          ; tasing you for every semicolon you forget
+ syntax
+ (spell +aspell)
+ grammar
 
  :tools
  ;;ansible
@@ -75,26 +82,28 @@
  ;;docker
  ;;editorconfig      ; let someone else argue about tabs vs spaces
  ;;ein               ; tame Jupyter notebooks with emacs
- eval              ; run code, run (also, repls)
+ (eval +overlay)              ; run code, run (also, repls)
  ;;flyspell          ; tasing you for misspelling mispelling
  ;;gist              ; interacting with github gists
  (lookup           ; helps you navigate your code and documentation
-  +docsets)        ; ...or in Dash docsets locally
+  +docsets        ; ...or in Dash docsets locally
+  +dictionary)
  lsp
  ;;macos             ; MacOS-specific commands
  magit             ; a git porcelain for Emacs
- ;;make              ; run make tasks from Emacs
+ make              ; run make tasks from Emacs
  ;;password-store    ; password manager for nerds
- ;;pdf               ; pdf enhancements
+ pdf               ; pdf enhancements
  ;;prodigy           ; FIXME managing external services & code builders
- ;;rgb               ; creating color strings
+ rgb               ; creating color strings
  ;;terraform         ; infrastructure as code
  ;;tmux              ; an API for interacting with tmux
  ;;upload            ; map local to remote projects via ssh/ftp
  ;;wakatime
- ;;vterm             ; another terminals in Emacs
 
  :lang
+ racket
+ scheme
  ;;agda              ; types of types of types of types...
  ;;assembly          ; assembly for fun or debugging
  ;;cc                ; C/C++/Obj-C madness
@@ -138,7 +147,6 @@
  ;;purescript        ; javascript, but functional
  (python +lsp)            ; beautiful is better than ugly
  ;;qt                ; the 'cutest' gui framework ever
- ;;racket            ; a DSL for DSLs
  ;;rest              ; Emacs as a REST client
  ;;ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
  ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
@@ -148,6 +156,7 @@
  ;;swift             ; who asked for emoji variables?
  ;;terra             ; Earth and Moon in alignment for performance.
  (web +lsp)               ; the tubes
+ yaml
  ;;vala              ; GObjective-C
 
  ;; Applications are complex and opinionated modules that transform Emacs
@@ -155,7 +164,7 @@
  ;; should be loaded late.
  :app
  ;;(email +gmail)    ; emacs as an email client
- ;;irc               ; how neckbeards socialize
+ irc               ; how neckbeards socialize
  ;;(rss +org)        ; emacs as an RSS reader
  ;;twitter           ; twitter client https://twitter.com/vnought
  ;;(write            ; emacs as a word processor (latex + org + markdown)
