@@ -12,7 +12,7 @@
        :desc "kill emacs" :g "k" #'kill-emacs)
       (:prefix "t"
        :desc "Frame maximized" :g "m" #'toggle-frame-maximized)
-      (:prefix "/" :g "c" #'evil-ex-nohighlight)
+      ;(:prefix "/" :g "c" #'evil-ex-nohighlight)
       (:desc "Repeat last command" :g "r" #'repeat)
       (:prefix "b"
        :desc "Revert buffer" :g "r" #'revert-buffer))
@@ -32,4 +32,9 @@
       :n "l" #'doc-view-next-page
       :n "h" #'doc-view-previous-page)
 
-(map! [backtab] #'+format/buffer)
+;; global format command
+(map! :g [backtab] #'+format/buffer
+      :n "-" #'sp-forward-barf-sexp
+      :n "_" #'sp-backward-barf-sexp
+      :n "=" #'sp-forward-slurp-sexp
+      :n "+" #'sp-backward-slurp-sexp)
