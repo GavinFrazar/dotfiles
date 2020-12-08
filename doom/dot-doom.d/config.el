@@ -20,13 +20,12 @@
   (fira-code-mode--setup)
   (customize-set-variable
    'fira-code-mode-disabled-ligatures
-   '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
-)
+   '("[]" "#{" "#(" "#_" "#_(" "x"))) ;; List of ligatures to turn off
+
 
 ;; configure .info files to use Info-mode
 (use-package! info
-  :mode ("\\.info\\'" . Info-mode)
-)
+  :mode ("\\.info\\'" . Info-mode))
 
 ;;; Hooks:
 (add-hook! org-mode
