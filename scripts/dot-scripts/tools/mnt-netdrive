@@ -1,0 +1,6 @@
+#!/bin/bash
+# specify the folder to mount the share drive to
+# i.e Usage: mnt-netdrive ~/path/to/mnt/folder
+
+sudo mount -t cifs -o username="Gavin",uid=$(id -u),gid=$(id -g) //desktop-gavin/b "$1"
+
