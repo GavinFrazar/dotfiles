@@ -105,7 +105,7 @@
  racket
  ;;agda              ; types of types of types of types...
  ;;assembly          ; assembly for fun or debugging
- ;;cc                ; C/C++/Obj-C madness
+ cc                ; C/C++/Obj-C madness
  ;;clojure           ; java with a lisp
  ;;common-lisp       ; if you've seen one lisp, you've seen them all
  ;;coq               ; proofs-as-programs
@@ -125,7 +125,7 @@
  (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
  ;;julia             ; a better, faster MATLAB
  ;;kotlin            ; a better, slicker Java(Script)
- ;;latex             ; writing papers in Emacs has never been so fun
+ latex             ; writing papers in Emacs has never been so fun
  ;;ledger            ; an accounting system in Emacs
  ;;lua               ; one-based indices? one-based indices
  markdown          ; writing docs for people to ignore
