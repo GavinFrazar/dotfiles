@@ -7,25 +7,18 @@
 (setq user-full-name "Gavin Frazar"
       user-mail-address "gavinfrazar@gmail.com")
 
-(setq doom-font (font-spec :family "Iosevka" :size 20)
-      doom-big-font (font-spec :family "Iosevka" :size 24)
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 20))
+(setq org-directory "~/org")
 
-(custom-set-faces!
-  '(doom-modeline-buffer-modified :foreground "orange"))
+(setq-default
+ delete-by-moving-to-trash t            ; Delete files to trash
+ tab-width 4                            ; Set width for tabs
+ uniquify-buffer-name-style 'forward    ; Uniquify buffer names
+ window-combination-resize t            ; take new window space from all other windows (not just current)
+ x-stretch-cursor t)                    ; Stretch cursor to the glyph width
 
-(use-package! fira-code-mode
-  :hook prog-mode
-  :config
-  (fira-code-mode--setup)
-  (customize-set-variable
-   'fira-code-mode-disabled-ligatures
-   '("[]" "#{" "#(" "#_" "#_(" "x"))) ;; List of ligatures to turn off
-
-
-;; configure .info files to use Info-mode
-(use-package! info
-  :mode ("\\.info\\'" . Info-mode))
+(unless (equal "Battery status not available"
+               (battery))
+  (display-battery-mode 1))
 
 ;;; Hooks:
 (add-hook! org-mode
@@ -39,7 +32,9 @@
   (setq-local doom-modeline-buffer-encoding
               (unless (or (eq buffer-file-coding-system 'utf-8-unix)
                           (eq buffer-file-coding-system 'utf-8)))))
+(add-hook! 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
 
+;; Disable scheme-mode auto-enabling for any file type
 (setq auto-mode-alist (rassq-delete-all 'scheme-mode auto-mode-alist))
 
 (use-package! ox-pandoc
@@ -57,3 +52,20 @@
 
 ;; set the theme
 (setq doom-theme 'doom-vibrant)
+
+;; customize colors
+(custom-set-faces!
+  '(doom-modeline-buffer-modified :foreground "orange"))
+
+;; fonts
+(use-package! fira-code-mode
+  :hook prog-mode
+  :config
+  (fira-code-mode--setup)
+  (customize-set-variable
+   'fira-code-mode-disabled-ligatures
+   '("[]" "#{" "#(" "#_" "#_(" "x"))) ;; List of ligatures to turn off
+
+(setq doom-font (font-spec :family "Iosevka" :size 20)
+      doom-big-font (font-spec :family "Iosevka" :size 24)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 20))
