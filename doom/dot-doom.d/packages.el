@@ -7,3 +7,4 @@
 ;; (package! builtin-package :disable t)
 
 (package! fira-code-mode)
+(package! ox-pandoc)
