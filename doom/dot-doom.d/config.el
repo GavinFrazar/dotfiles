@@ -40,5 +40,7 @@
               (unless (or (eq buffer-file-coding-system 'utf-8-unix)
                           (eq buffer-file-coding-system 'utf-8)))))
 
+(setq auto-mode-alist (rassq-delete-all 'scheme-mode auto-mode-alist))
+
 ;; set the theme
 (setq doom-theme 'doom-vibrant)
