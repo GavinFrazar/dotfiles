@@ -75,3 +75,8 @@
 (setq doom-font (font-spec :family "Iosevka" :size 20)
       doom-big-font (font-spec :family "Iosevka" :size 24)
       doom-variable-pitch-font (font-spec :family "Overpass" :size 20))
+
+;; Add my file-templates dir
+(defvar +gavin-file-templates-dir
+  (expand-file-name "file-templates" doom-private-dir))
+(add-to-list 'yas-snippet-dirs '+gavin-file-templates-dir)
