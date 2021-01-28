@@ -15,7 +15,8 @@
       ;(:prefix "/" :g "c" #'evil-ex-nohighlight)
       (:desc "Repeat last command" :g "r" #'repeat)
       (:prefix "b"
-       :desc "Revert buffer" :g "r" #'revert-buffer))
+       :desc "Revert buffer" :g "r" #'revert-buffer)
+      (:desc "Alternate buffer" :g "a" #'evil-buffer))
 
 ;; org
 (map! :map org-mode-map
