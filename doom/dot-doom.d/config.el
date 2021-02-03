@@ -55,6 +55,28 @@
       org-catch-invisible-edits 'smart
       org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+") ("1." . "a.")))
 (after! org (add-hook 'org-mode-hook 'turn-on-flyspell))
+(setq org-todo-keywords
+      '((sequence
+         "TODO(t)"  ; A task that needs doing
+         "PROJ(p)"  ; A project, which usually contains other tasks
+         "STRT(s)"  ; A task that is in progress
+         "WAIT(w)"  ; Something external is holding up this task
+         "HOLD(h)"  ; This task is paused/on hold because of me
+         "|"
+         "DONE(d)"  ; Task successfully completed
+         "KILL(k)"))) ; Task was cancelled, aborted or is no longer applicable
+(setq org-todo-keyword-faces
+      '(("STRT" . +org-todo-active)
+        ("WAIT" . +org-todo-onhold)
+        ("HOLD" . +org-todo-onhold)
+        ("PROJ" . +org-todo-project)))
+(setq org-stuck-projects
+      ;; SOMEDAY items are not stuck projects
+      ;; Only lev
+      '("-CATEGORY=\"SOMEDAY\"/+PROJ-DONE-KILL"
+        ("TODO" "STRT") ; check if there is an action item in the project
+        nil      ; same as above except tag search. Leave nil for no tag check
+        ""))     ; regex matching non-stuck projects.
 
 ;; set the theme
 (setq doom-theme 'doom-vibrant)
