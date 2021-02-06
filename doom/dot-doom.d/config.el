@@ -33,17 +33,17 @@
 (setq auto-mode-alist (rassq-delete-all 'scheme-mode auto-mode-alist))
 
 ;; Org tweaks
-(use-package! ox-pandoc
-  :after org)
+;; (use-package! ox-pandoc
+;;   :after org)
 ;; default options for all output formats
-(setq org-pandoc-options '((standalone . _)))
-;; cancel above settings only for 'docx' format
-(setq org-pandoc-options-for-docx '((standalone . nil)))
-;; special settings for beamer-pdf and latex-pdf exporters
-(setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
-(setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
-;; special extensions for markdown_github output
-(setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
+;; (setq org-pandoc-options '((standalone . _)))
+;; ;; cancel above settings only for 'docx' format
+;; (setq org-pandoc-options-for-docx '((standalone . nil)))
+;; ;; special settings for beamer-pdf and latex-pdf exporters
+;; (setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
+;; (setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
+;; ;; special extensions for markdown_github output
+;; (setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
 (remove-hook 'org-mode
              #'visual-line-mode)
 (add-hook 'org-mode
@@ -54,7 +54,6 @@
       org-export-in-background t
       org-catch-invisible-edits 'smart
       org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+") ("1." . "a.")))
-(after! org (add-hook 'org-mode-hook 'turn-on-flyspell))
 (setq org-todo-keywords
       '((sequence
          "TODO(t)"  ; A task that needs doing

@@ -47,7 +47,7 @@
  lsp
  magit
 
- :os
+ ;; :os
 
  :lang
  ;;assembly
@@ -59,15 +59,15 @@
  (javascript +lsp)
  latex             ; writing papers in Emacs has never been so fun
  markdown          ; writing docs for people to ignore
- (org +dragndrop +pandoc +roam)
+ (org +pandoc +roam)
  (python +lsp)
  racket
  (rust +lsp)
  (sh +fish)
  web
 
- :email ; unused
- :app   ; unused
+ ;; :email
+ ;; :app
  ;;irc               ; how neckbeards socialize
 
  :config
