@@ -59,14 +59,7 @@
  (javascript +lsp)
  latex             ; writing papers in Emacs has never been so fun
  markdown          ; writing docs for people to ignore
- (org              ; organize your plain life in plain text
-  +attach          ; custom attachment system
-  +babel           ; running code in org
-  +capture         ; org-capture in and outside of Emacs
-  +export          ; Exporting org to whatever you want
-  +habit           ; Keep track of your habits
-  +present         ; Emacs for presentations
-  +protocol)       ; Support for org-protocol:// links
+ (org +dragndrop +pandoc +roam)
  (python +lsp)
  racket
  (rust +lsp)
